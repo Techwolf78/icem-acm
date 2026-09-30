@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "zip": "python scripts/zip.py",
+    "export-zip": "next build && python scripts/zip.py",
     "start": "next start"
   },
   "dependencies": {
