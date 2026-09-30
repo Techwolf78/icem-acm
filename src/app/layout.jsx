@@ -21,9 +21,9 @@ export const metadata = {
   title: "ICEM ACM Student Chapter | Department of AI & Data Science",
   description: "Official portal of the ICEM ACM Student Chapter, Department of AI & Data Science, Indira College of Engineering and Management (ICEM), Pune.",
   icons: {
-    icon: "/icem-acm/favicon.ico",
-    shortcut: "/icem-acm/favicon.ico",
-    apple: "/icem-acm/favicon.ico",
+    icon: "/icem-acm/shortLogo.png",
+    shortcut: "/icem-acm/shortLogo.png",
+    apple: "/icem-acm/shortLogo.png",
   },
 };
 
@@ -31,8 +31,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`} suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/icem-acm/favicon.ico" sizes="any" />
-        <link rel="shortcut icon" href="/icem-acm/favicon.ico" />
+        <link rel="icon" type="image/png" href="/icem-acm/shortLogo.png" />
+        <link rel="shortcut icon" href="/icem-acm/shortLogo.png" />
+        <link rel="apple-touch-icon" href="/icem-acm/shortLogo.png" />
       </head>
       <body className="flex flex-col min-h-screen bg-white text-slate-900 font-sans antialiased selection:bg-[#003c84] selection:text-white" suppressHydrationWarning>
         <Navbar />
