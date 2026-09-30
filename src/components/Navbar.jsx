@@ -28,8 +28,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between min-h-[72px] lg:h-[84px] gap-4">
           
           {/* Left: Official ICEM Logo + Chapter Co-Branding */}
-          <Link href="/" className="flex items-center gap-3.5 py-2 flex-shrink-0 group">
-            <div className="relative h-12 w-44 sm:h-14 sm:w-56 md:h-16 md:w-64 flex-shrink-0">
+          <Link href="/" className="flex items-center gap-3 py-2 flex-shrink-0 group">
+            <div className="relative h-11 w-40 sm:h-12 sm:w-48 xl:h-13 xl:w-52 2xl:h-15 2xl:w-60 flex-shrink-0">
               <Image
                 src={logoPic}
                 alt="Indira College of Engineering & Management"
@@ -39,23 +39,23 @@ export default function Navbar() {
               />
             </div>
 
-            <div className="h-10 w-[1px] bg-slate-200 hidden md:block"></div>
+            <div className="h-9 w-[1px] bg-slate-200 hidden 2xl:block"></div>
 
-            <div className="hidden md:flex flex-col justify-center">
-              <span className="font-extrabold text-xs sm:text-[13px] text-[#003c84] tracking-tight leading-tight">
+            <div className="hidden 2xl:flex flex-col justify-center">
+              <span className="font-extrabold text-xs text-[#003c84] tracking-tight leading-tight whitespace-nowrap">
                 ACM Student Chapter
               </span>
-              <span className="text-[10px] text-slate-500 font-semibold tracking-tight mt-0.5">
+              <span className="text-[10px] text-slate-500 font-semibold tracking-tight mt-0.5 whitespace-nowrap">
                 Dept. of AI &amp; Data Science
               </span>
             </div>
           </Link>
 
           {/* Right: 2-Tier Layout Inspired by indiraicem.ac.in */}
-          <div className="hidden xl:flex flex-col items-end py-1 flex-1 max-w-4xl">
+          <div className="hidden xl:flex flex-col items-end py-1 flex-1 max-w-5xl">
             
             {/* Tier 1: Micro Utility Row */}
-            <div className="flex items-center justify-end gap-2 text-[11.5px] text-slate-600 font-medium pb-1.5 border-b border-slate-100 w-full">
+            <div className="flex items-center justify-end gap-2 text-[11px] 2xl:text-[11.5px] text-slate-600 font-medium pb-1.5 border-b border-slate-100 w-full whitespace-nowrap">
               <a
                 href="https://indiraicem.ac.in/programs/ai-ds/"
                 target="_blank"
@@ -70,20 +70,20 @@ export default function Navbar() {
                 href="https://dl.acm.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#003c84] transition"
+                className="hover:text-[#003c84] transition hidden 2xl:inline"
               >
                 ACM Digital Library
               </a>
-              <span className="text-slate-300">|</span>
+              <span className="text-slate-300 hidden 2xl:inline">|</span>
               <a
                 href="https://www.acm.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#003c84] transition"
+                className="hover:text-[#003c84] transition hidden 2xl:inline"
               >
                 ACM.org
               </a>
-              <span className="text-slate-300">|</span>
+              <span className="text-slate-300 hidden 2xl:inline">|</span>
               <a
                 href="https://indiraicem.ac.in"
                 target="_blank"
@@ -97,23 +97,23 @@ export default function Navbar() {
               <Link
                 href="/login"
                 prefetch={false}
-                className="bg-[#003c84] hover:bg-[#002d66] text-white px-2.5 py-0.5 rounded text-[11px] font-semibold transition"
+                className="bg-[#003c84] hover:bg-[#002d66] text-white px-2.5 py-0.5 rounded text-[11px] font-semibold transition whitespace-nowrap"
               >
                 Sign In
               </Link>
               
-              {/* Right-Docked Solid Button (like indiraicem.ac.in "Enquire Now") */}
+              {/* Right-Docked Solid Button */}
               <Link
                 href="/membership"
                 prefetch={false}
-                className="bg-[#003c84] hover:bg-[#278da4] text-white px-3.5 py-1 font-bold text-xs tracking-wide uppercase transition-colors rounded-sm ml-1"
+                className="bg-[#003c84] hover:bg-[#278da4] text-white px-3 py-1 font-bold text-xs tracking-wide uppercase transition-colors rounded-sm ml-1 whitespace-nowrap"
               >
                 Join Chapter
               </Link>
             </div>
 
             {/* Tier 2: Main Academic Navigation Row */}
-            <nav className="flex items-center gap-5 xl:gap-7 pt-2">
+            <nav className="flex items-center gap-3.5 xl:gap-4 2xl:gap-6 pt-2 overflow-hidden">
               {navItems.map((item) => {
                 const isActive = pathname === item.href;
                 return (
@@ -121,7 +121,7 @@ export default function Navbar() {
                     key={item.href}
                     href={item.href}
                     prefetch={false}
-                    className={`text-[13.5px] font-bold tracking-tight transition-colors duration-150 py-1 relative ${
+                    className={`text-[12.5px] 2xl:text-[13.5px] font-bold tracking-tight transition-colors duration-150 py-1 relative whitespace-nowrap ${
                       isActive
                         ? "text-[#003c84] border-b-2 border-[#003c84]"
                         : "text-slate-800 hover:text-[#003c84]"
@@ -138,13 +138,13 @@ export default function Navbar() {
           <div className="hidden md:flex xl:hidden items-center gap-2">
             <Link
               href="/login"
-              className="px-3 py-1.5 rounded text-xs font-semibold text-slate-700 hover:text-[#003c84] hover:bg-slate-50 transition border border-slate-200"
+              className="px-3 py-1.5 rounded text-xs font-semibold text-slate-700 hover:text-[#003c84] hover:bg-slate-50 transition border border-slate-200 whitespace-nowrap"
             >
               Sign In
             </Link>
             <Link
               href="/membership"
-              className="bg-[#003c84] hover:bg-[#002d66] text-white px-3.5 py-1.5 rounded text-xs font-bold transition"
+              className="bg-[#003c84] hover:bg-[#002d66] text-white px-3.5 py-1.5 rounded text-xs font-bold transition whitespace-nowrap"
             >
               Join Chapter
             </Link>
