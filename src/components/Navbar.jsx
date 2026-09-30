@@ -96,6 +96,7 @@ export default function Navbar() {
               <span className="text-slate-300">|</span>
               <Link
                 href="/login"
+                prefetch={false}
                 className="bg-[#003c84] hover:bg-[#002d66] text-white px-2.5 py-0.5 rounded text-[11px] font-semibold transition"
               >
                 Sign In
@@ -104,6 +105,7 @@ export default function Navbar() {
               {/* Right-Docked Solid Button (like indiraicem.ac.in "Enquire Now") */}
               <Link
                 href="/membership"
+                prefetch={false}
                 className="bg-[#003c84] hover:bg-[#278da4] text-white px-3.5 py-1 font-bold text-xs tracking-wide uppercase transition-colors rounded-sm ml-1"
               >
                 Join Chapter
@@ -118,6 +120,7 @@ export default function Navbar() {
                   <Link
                     key={item.href}
                     href={item.href}
+                    prefetch={false}
                     className={`text-[13.5px] font-bold tracking-tight transition-colors duration-150 py-1 relative ${
                       isActive
                         ? "text-[#003c84] border-b-2 border-[#003c84]"

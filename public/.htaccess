@@ -2,10 +2,18 @@
   RewriteEngine On
   RewriteBase /icem-acm/
 
+  # Map RSC prefetch requests for root
+  RewriteRule ^icem-acm\.txt$ index.txt [L,QSA]
+  RewriteRule ^index\.txt$ index.txt [L,QSA]
+
   # Serve existing files and directories directly
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
+
+  # Route directory requests to index.html (e.g. /about/ -> /about/index.html)
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^(.*)/?$ $1/index.html [L]
 
   # Map clean URLs to .html files (e.g., /about -> /about.html)
   RewriteCond %{REQUEST_FILENAME}.html -f

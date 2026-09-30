@@ -5,6 +5,7 @@ const basePath = isVercel ? "" : (process.env.NEXT_PUBLIC_BASE_PATH || "/icem-ac
 const nextConfig = {
   ...(isVercel ? {} : { output: "export" }),
   basePath: basePath,
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },
