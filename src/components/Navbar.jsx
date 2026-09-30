@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Shield, Menu, X, LogIn, ChevronRight, ExternalLink } from "lucide-react";
+import logoPic from "../../public/Logo.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,12 +31,11 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-3.5 py-2 flex-shrink-0 group">
             <div className="relative h-12 w-44 sm:h-14 sm:w-56 md:h-16 md:w-64 flex-shrink-0">
               <Image
-                src="/icem-acm/Logo.png"
+                src={logoPic}
                 alt="Indira College of Engineering & Management"
                 fill
                 className="object-contain object-left transition-opacity group-hover:opacity-95"
                 priority
-                unoptimized
               />
             </div>
 
