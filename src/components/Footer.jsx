@@ -13,7 +13,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-3 group">
               <div className="relative h-12 w-40 sm:h-14 sm:w-48 flex-shrink-0">
                 <Image
-                  src="/Logo.png"
+                  src="/icem-acm/Logo.png"
                   alt="Indira College of Engineering & Management (ICEM)"
                   fill
                   className="object-contain object-left"

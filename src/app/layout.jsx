@@ -6,7 +6,7 @@ export const metadata = {
   title: "ICEM ACM Student Chapter | Department of AI & Data Science",
   description: "Official portal of the ICEM ACM Student Chapter, Department of AI & Data Science, Indira College of Engineering and Management (ICEM), Pune.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/icem-acm/favicon.ico",
   },
 };
 
