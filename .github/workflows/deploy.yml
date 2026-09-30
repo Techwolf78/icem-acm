@@ -33,7 +33,7 @@ jobs:
           HOST: ${{ secrets.CPANEL_HOST }}
           USER: ${{ secrets.CPANEL_USER }}
           PORT: ${{ secrets.CPANEL_PORT || '22' }}
-          TARGET: ${{ secrets.REMOTE_TARGET || format('/home/{0}/public_html/acm', secrets.CPANEL_USER) }}
+          TARGET: ${{ secrets.REMOTE_TARGET || format('/home/{0}/public_html/icem-acm', secrets.CPANEL_USER) }}
         run: |
           mkdir -p ~/.ssh
           echo "$SSH_KEY" > ~/.ssh/id_rsa
