@@ -1,0 +1,70 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ============================================================
+   ICEM OFFICIAL COLOR THEME & DESIGN TOKENS
+   Primary: #278da4 (ICEM Teal / Cyan Blue)
+   Secondary: #003c84 (ICEM Navy / Royal Blue)
+   Background: #ffffff (Clean Pure White)
+============================================================ */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --color-primary: 39, 141, 164;
+  --color-primary-hex: #278da4;
+
+  --color-secondary: 0, 60, 132;
+  --color-secondary-hex: #003c84;
+
+  --color-secondary-dark: #002d66;
+  --color-accent-amber: #f59e0b;
+
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-alt: #f4f8fa;
+  --surface-subtle: #f8fafc;
+  --line: #e2e8f0;
+  --line-icem: rgba(0, 60, 132, 0.12);
+
+  --font-heading: 'Space Grotesk', 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+html, body {
+  background-color: #ffffff !important;
+  color: var(--foreground);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* ICEM Utility Classes */
+.bg-icem-navy { background-color: #003c84; }
+.bg-icem-teal { background-color: #278da4; }
+.text-icem-navy { color: #003c84; }
+.text-icem-teal { color: #278da4; }
+.border-icem-navy { border-color: #003c84; }
+.border-icem-teal { border-color: #278da4; }
+
+/* Custom clean scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #278da4;
+}
