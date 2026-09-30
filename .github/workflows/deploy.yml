@@ -1,0 +1,45 @@
+name: Deploy ICEM ACM to cPanel
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: 📥 Checkout Code
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: 📦 Install Dependencies
+        run: npm ci
+
+      - name: 🏗️ Build Next.js Static Export
+        run: npm run build
+
+      - name: 🚀 Package and Deploy to cPanel (Ultra Fast)
+        env:
+          SSH_KEY: ${{ secrets.CPANEL_SSH_KEY }}
+          HOST: ${{ secrets.CPANEL_HOST }}
+          USER: ${{ secrets.CPANEL_USER }}
+          PORT: ${{ secrets.CPANEL_PORT || '22' }}
+          TARGET: ${{ secrets.REMOTE_TARGET || format('/home/{0}/public_html/acm', secrets.CPANEL_USER) }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh -p "$PORT" -o StrictHostKeyChecking=no "$USER@$HOST" "mkdir -p $TARGET"
+          tar -czf deploy.tar.gz -C out .
+          scp -P "$PORT" -o StrictHostKeyChecking=no deploy.tar.gz "$USER@$HOST:$TARGET/"
+          ssh -p "$PORT" -o StrictHostKeyChecking=no "$USER@$HOST" "tar -xzf $TARGET/deploy.tar.gz -C $TARGET/ && rm -f $TARGET/deploy.tar.gz"
+          echo "Deployment completed successfully to cPanel!"
